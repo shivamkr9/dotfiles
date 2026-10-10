@@ -6,6 +6,7 @@ shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
 
+
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 

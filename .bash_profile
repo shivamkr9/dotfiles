@@ -1,6 +1,7 @@
 source ~/.nvm/nvm.sh
 nvm use stable
-shopt -s autocd
+# Allows you to change directories simply by typing the folder name without typing cd first (e.g., typing Documents instead of cd Documents).
+# shopt -s autocd
 shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
@@ -15,14 +16,10 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 txtred='\e[0;31m' # Red
-txtgrn='\e[0;32m' # Green
+txtgrn='\e[0;32m' # Green̦
 bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple
 txtrst='\e[0m'    # Text Reset
-
-emojis=("👾" "🌐" "🎲" "🌍" "🐉" "🌵")
-
-EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
 print_before_the_prompt () {
     dir=$PWD
@@ -33,11 +30,11 @@ print_before_the_prompt () {
 
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI >"
+PS1="$ "
 
 function mkcd()
 {
-	mkdir $1 && cd $1
+    mkdir $1 && cd $1
 }
 
 # -------
